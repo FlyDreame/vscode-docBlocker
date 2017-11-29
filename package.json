@@ -2,7 +2,7 @@
     "name": "docblocker",
     "displayName": "docBlocker",
     "description": "Adds simple comments to any place",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "publisher": "flydreame",
     "engines": {
         "vscode": "^1.17.0"
