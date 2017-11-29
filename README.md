@@ -6,7 +6,7 @@ Adds simple comments to any place.
 
 ## Using
 
-![](./images/using.gif)
+![](https://raw.githubusercontent.com/FlyDreame/vscode-docBlocker/master/images/using.gif)
 
 
 
@@ -14,11 +14,19 @@ Adds simple comments to any place.
 
 In the User Settings inside, set and modify the creator's name or the comments template
 
-![](./images/config.png)
+![](https://raw.githubusercontent.com/FlyDreame/vscode-docBlocker/master/images/config.png)
 
 
+
+## Hot Key
+
+`ctrl+shift+/`  You can insert comments in codes.
 
 ## Change Log
+
+0.2.0
+
++ Support hotkey insert comments
 
 0.1.0
 

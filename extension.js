@@ -2,7 +2,7 @@
  * @Author: liumeng6 
  * @Date: 2017-11-27 19:38:38 
  * @Last Modified by: liumeng6
- * @Last Modified time: 2017-11-28 10:48:57
+ * @Last Modified time: 2017-11-29 18:57:49
  */
 
 const vscode = require('vscode')
@@ -87,6 +87,7 @@ function activate(context) {
 
                 textToInsert = indentString(textToInsert, 1, {indent: stringToIndent})
                 editBuilder.insert(pos, textToInsert.slice(stringToIndent.length))
+                
             } catch (error) {
                 console.error(error)
             }
