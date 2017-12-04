@@ -2,11 +2,12 @@
  * @Author: liumeng6 
  * @Date: 2017-11-27 19:38:38 
  * @Last Modified by: liumeng6
- * @Last Modified time: 2017-11-29 19:50:11
+ * @Last Modified time: 2017-12-04 20:17:09
  */
 
 const vscode = require('vscode')
 const indentString = require('indent-string')
+const Mustache = require('mustache')
 
 /** 
  * @Author: liumeng6 
@@ -39,14 +40,14 @@ Date.prototype.format = function (format) {
  * @Date: 2017-11-29 19:49:38 
  * @Desc: es6模版字符串引擎 
  */
-function stp(strTmpl, data) {
-    if (data !== null && data !== undefined) {
-      return stp(strTmpl)(data)
-    }
-    strTmpl = strTmpl.replace(/\\/g, '\\\\')
-    strTmpl = strTmpl.replace(/`/g, '\\`')
-    return new Function("$", "with($){return `" + strTmpl + '`;}')
-}
+// function stp(strTmpl, data) {
+//     if (data !== null && data !== undefined) {
+//       return stp(strTmpl)(data)
+//     }
+//     strTmpl = strTmpl.replace(/\\/g, '\\\\')
+//     strTmpl = strTmpl.replace(/`/g, '\\`')
+//     return new Function("$", "with($){return `" + strTmpl + '`;}')
+// }
 
 /** 
  * @Author: liumeng6 
@@ -65,13 +66,24 @@ function activate(context) {
         // const character = editor.selection.active.character
         
         const time = new Date().format("yyyy-MM-dd hh:mm:ss")
-        const tpl = config.tpl
+        const defaultTpl = config.defaultTpl
         const data = {
             author: config.Author,
             createTime: time,
         }
         try {
-            let textToInsert = stp(tpl, data)
+            // 当前文件所属的编程语言
+            const languageId = vscode.window.activeTextEditor.document.languageId
+            // 默认注释字符串
+            let textToInsert = Mustache.render(defaultTpl, data)
+            // 判断是否针对当前语言有特殊注释模版
+            if (config.languageTpl) {
+                config.languageTpl.map(langTpl => {
+                    if (langTpl.language === languageId && langTpl.tpl) {
+                        textToInsert = Mustache.render(langTpl.tpl, data)
+                    }
+                })
+            }
 
             let pos = new vscode.Position(startLine, 0)
 

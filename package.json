@@ -1,6 +1,6 @@
 {
     "name": "docblocker",
-    "displayName": "docBlocker",
+    "displayName": "DocBlocker",
     "description": "Adds simple comments to any place",
     "version": "0.3.0",
     "publisher": "flydreame",
@@ -31,11 +31,21 @@
                     "type": "string",
                     "default": "flydreame",
                     "description": "By default, create blocker username"
-                }, 
-                "docBlocker.tpl": {
+                },
+                "docBlocker.defaultTpl": {
                     "type": "string",
-                    "default": "/** \n * @Author: ${author} \n * @Date: ${createTime} \n * @Desc: \n */",
+                    "default": "/** \n * @Author: {{author}} \n * @Date: {{createTime}} \n * @Desc: $0 \n */",
                     "description": "By default, create blocker template"
+                },
+                "docBlocker.languageTpl": {
+                    "type": "array",
+                    "default": [
+                        {
+                            "language": "javascript",
+                            "tpl": "/** \n * javascript comment \n * @Author: {{author}} \n * @Date: {{createTime}} \n * @Desc: $0 \n */"
+                        }
+                    ],
+                    "description": "Config the comment template for different languages"
                 }
             }
         },
@@ -65,6 +75,7 @@
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
-        "indent-string": "^3.2.0"
+        "indent-string": "^3.2.0",
+        "mustache": "^2.3.0"
     }
 }
