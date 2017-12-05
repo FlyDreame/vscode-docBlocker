@@ -18,6 +18,12 @@
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "document",
+        "doc",
+        "docblocker",
+        "comment"
+    ],
     "activationEvents": [
         "onCommand:extension.docblocker"
     ],

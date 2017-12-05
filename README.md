@@ -24,9 +24,9 @@ Config comment templates for different languages.
 
 > 你甚至可以针对不同的语言设置不同的注释模版
 
-![](/images/template.png)
+![](https://raw.githubusercontent.com/FlyDreame/vscode-docBlocker/master/images/template.png)
 
-
+​             
 
 ## Hot Key
 
