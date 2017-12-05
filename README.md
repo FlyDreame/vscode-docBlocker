@@ -20,7 +20,13 @@ In the User Settings inside, set and modify the creator's name or the comments t
 
 ![](https://raw.githubusercontent.com/FlyDreame/vscode-docBlocker/master/images/config.png)
 
-​    
+Config comment templates for different languages.
+
+> 你甚至可以针对不同的语言设置不同的注释模版
+
+![](/images/template.png)
+
+
 
 ## Hot Key
 
@@ -32,20 +38,27 @@ In the User Settings inside, set and modify the creator's name or the comments t
 
 ## Change Log
 
-0.3.0
-+ Support snippet for the comments template.(not support the snippet Syntax `${*}`)
+0.4.0
 
-  > 支持在注释模版中使用snippet 语法，但目前不支持`${*}`语法
++ Support set comment templates for different languages.
+
+  > 针对不同的语言设置不同的注释模版
+
+0.3.0
+
++ Support snippet for the comments template.
+
+  > 支持在注释模版中使用snippet 语法
 
 0.2.0
 
-+ Support hotkey insert comments
++ Support hotkey insert comments.
 
   > 支持通过快捷键插入注释
 
 0.1.0
 
-+ Support the configuration and update the creator's name or the comments template
++ Support the configuration and update the creator's name or the comments template.
 
   > 支持配置更新作者姓名和注释模版
 
